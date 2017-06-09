@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Collections;
 
 public class Tienda {
 	static short MAX = 10;
@@ -93,6 +95,17 @@ public class Tienda {
 	public static void mostrarMusica() {
 		if(MUSICA.isEmpty()) error("NO HAY MUSICA ALMACENADA");
 		else {
+			
+			// Antes de mostrar ordenamos alfabeticamente
+			Collections.sort(MUSICA, new Comparator<Musica>(){
+				@Override
+				public int compare(Musica m1, Musica m2) {
+					// Ordenar por cantante
+					return m1.cantante.compareTo(m2.cantante);
+				}
+			});
+
+			// Ahora mostrar
 			for(int i = 0; i < MUSICA.size(); i++) {
 				MCursor.BLinea(30);
 				MUSICA.get(i).mostrar("MUSICA NUMERO " + (i + 1));
@@ -181,6 +194,16 @@ public class Tienda {
 	public static void mostrarPelicula() {
 		if(PELICULAS.isEmpty()) error("NO HAY PELICULAS ALMACENADAS");
 		else {
+			
+			// Antes de mostrar ordenamos alfabeticamente
+			Collections.sort(PELICULAS, new Comparator<Pelicula>(){
+				@Override
+				public int compare(Pelicula p1, Pelicula p2) {
+					// Ordenar por cantante
+					return p1.director.compareTo(p2.director);
+				}
+			});
+
 			for(int i = 0; i < PELICULAS.size(); i++) {
 				MCursor.BLinea(30);
 				PELICULAS.get(i).mostrar("PELICULAS NUMERO " + (i + 1));
