@@ -2,7 +2,7 @@
 public class Musica extends Product {
 	public String cantante;
 	
-	public Musica(String titulo, double costo, long codBar, short existencia, String productor, String cantante) {
+	public Musica(String titulo, double costo, int codBar, short existencia, String productor, String cantante) {
 		super(titulo, costo, codBar, existencia, productor);
 		this.cantante = cantante;
 	}

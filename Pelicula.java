@@ -4,7 +4,7 @@ public class Pelicula extends Product {
 	public String director;
 	public ArrayList<String> protagonistas;
 	
-	public Pelicula(String titulo, double costo, long codBar, short existencia, String productor) {
+	public Pelicula(String titulo, double costo, int codBar, short existencia, String productor) {
 		super(titulo, costo, codBar, existencia, productor);
 		this.protagonistas = new ArrayList<>();
 	}
